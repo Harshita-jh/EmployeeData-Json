@@ -1,0 +1,55 @@
+<p>employees-service-json-assignment works!</p>
+
+<div  class="container mt-2">
+    
+      
+    
+    <pre>Search by Employee Name: <input type="text" placeholder="search employee name" [(ngModel)]="searchText"></pre>  
+  
+    <table class="table align-center" style="background-color: rgb(137, 219, 216);">
+  
+      <!-- table-bordered -->
+  
+     
+  
+      <thead style="background-color:cadetblue;">
+  
+          <tr>
+  
+              <th>EmpID</th>
+  
+              <th>EmpName</th>
+  
+              <th>EmpSal</th>
+  
+              <th>EmpDesignation</th>
+  
+              <th>EmpImg</th>
+  
+            </tr>
+  
+      </thead>
+  
+      <tbody >
+  
+          <tr *ngFor="let emp of employees | employeesearchfilter:searchText" appMouseevent >
+  
+              <td>{{emp.empId}}</td>
+  
+              <td>{{emp.empName | titlecase}}</td>
+  
+              <td>{{emp.empSal | currency:'INR'}}</td>
+  
+              <td>{{emp.empDesig | titlecase}}</td>
+  
+              <td><img src = {{emp.empImg}} width="100" height="100" id="image" /></td>
+              </tr>
+  
+              
+      </tbody>
+  
+    </table>
+  
+  </div>
+  
+ 
